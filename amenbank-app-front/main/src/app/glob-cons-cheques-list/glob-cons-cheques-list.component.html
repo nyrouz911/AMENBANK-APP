@@ -1,0 +1,57 @@
+<!-- src/app/components/glob-cons-cheques-list/glob-cons-cheques-list.component.html -->
+<div>
+  <h2>Global Cons Cheques List</h2>
+  <table mat-table [dataSource]="cheques" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="idChq">
+      <th mat-header-cell *matHeaderCellDef>id Chèque</th>
+      <td mat-cell *matCellDef="let element">{{element.idChq}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="dateJournee">
+      <th mat-header-cell *matHeaderCellDef>Date de journée</th>
+      <td mat-cell *matCellDef="let element">{{element.dateJournee | date}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="codeAgence">
+      <th mat-header-cell *matHeaderCellDef>Code d'Agence</th>
+      <td mat-cell *matCellDef="let element">{{element.codeAgence}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="numLot">
+      <th mat-header-cell *matHeaderCellDef>Numéro du Lot</th>
+      <td mat-cell *matCellDef="let element">{{element.numLot}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ribTire">
+      <th mat-header-cell *matHeaderCellDef>ribTire</th>
+      <td mat-cell *matCellDef="let element">{{element.ribTire}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nomTire">
+      <th mat-header-cell *matHeaderCellDef>nomTire</th>
+      <td mat-cell *matCellDef="let element">{{element.nomTire}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="numCreance">
+      <th mat-header-cell *matHeaderCellDef>Numéro de Créance</th>
+      <td mat-cell *matCellDef="let element">{{element.numCreance}}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="dateEmission">
+      <th mat-header-cell *matHeaderCellDef>Date d'émission</th>
+      <td mat-cell *matCellDef="let element">{{element.dateEmission}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="montant">
+      <th mat-header-cell *matHeaderCellDef>Montant</th>
+      <td mat-cell *matCellDef="let element">{{element.montant}}</td>
+    </ng-container>
+    
+
+    <!-- Add more columns as needed -->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
